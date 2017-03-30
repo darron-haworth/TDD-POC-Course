@@ -12,7 +12,7 @@ namespace TDD_POC_Course
     public class Fractions
     {
 
-        public float AddFractions(float x, float y)
+        public double AddFractions(double x, double y)
         {
             return x + y;
         }

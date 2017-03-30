@@ -13,15 +13,16 @@ namespace UnitTestProject
         public void CanAddFractions()
         {
             //Arrange
-            float x = (float)1/(float)2;
-            float y = (float)1/(float)2;
+            var x = 0.5;
+            var y = 0.5;
+            var expectedResult = x + y;
             var fractions = new Fractions();
             //Act
-            float result = fractions.AddFractions(x, y);
+            var result = fractions.AddFractions(x, y);
 
 
             //Assert
-            Assert.IsTrue((result == x/y));
+            Assert.IsTrue(result.Equals(expectedResult));
         }
     }
 }
