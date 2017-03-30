@@ -14,7 +14,7 @@ namespace TDD_POC_Course
 
         public float AddFractions(float x, float y)
         {
-            return x;
+            return x + y;
         }
     }
 }
