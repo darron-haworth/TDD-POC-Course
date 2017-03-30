@@ -24,5 +24,24 @@ namespace UnitTestProject
             //Assert
             Assert.IsTrue(result.Equals(expectedResult));
         }
+
+
+        [TestMethod]
+        public void CanAddWholeNumbers()
+        {
+            //Arrange
+            var x = 5;
+            var y = 5;
+            var expectedResult = x + y;
+            var fractions = new Fractions();
+            //Act
+            var result = fractions.AddFractions(x, y);
+
+
+            //Assert
+            Assert.IsTrue(result.Equals(expectedResult));
+        }
+
+
     }
 }
