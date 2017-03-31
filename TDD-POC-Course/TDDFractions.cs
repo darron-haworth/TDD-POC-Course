@@ -6,6 +6,7 @@ using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using MathExtension;
+// ReSharper disable InconsistentNaming
 
 
 namespace TDD_POC_Course
@@ -14,8 +15,8 @@ namespace TDD_POC_Course
     {
         public Rational AddFractions(Rational x, Rational y)
         {
-            var retVal = x + y;
-            return retVal;
+            return x + y;
+
         }
     }
 

@@ -89,12 +89,12 @@ namespace UnitTestProject
             var expectedResult = x + y;
             var fractions = new TDDFractions();
             //Act
-            var result = fractions.AddFractions(x, y);
+            var result = fractions.AddFractions(x, y).ToMixedString();
 
 
             //Assert
             Console.Write("Result: " + result);
-            Assert.IsTrue(result.Equals(expectedResult));
+            Assert.IsTrue(result.Equals(expectedResult.ToMixedString()));
         }
 
         [TestMethod]
@@ -113,6 +113,25 @@ namespace UnitTestProject
             Console.Write("Result: " + result);
             Assert.IsTrue(result.Equals(expectedResult.ToMixedString()));
         }
+
+        [TestMethod]
+        public void CanAddLargeDenominators()
+        {
+            //Arrange
+            var x = ((Rational)20 / 625);
+            var y = (Rational) 280 / 275;
+            var expectedResult = x + y;
+            var fractions = new TDDFractions();
+            //Act
+            var result = fractions.AddFractions(x, y).Simplify().ToMixedString();
+
+
+            //Assert
+            Console.Write("Result: " + result);
+            Assert.IsTrue(result.Equals(expectedResult.ToMixedString()));
+        }
+
+
 
     }
 }
