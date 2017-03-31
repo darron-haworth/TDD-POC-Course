@@ -16,5 +16,13 @@ namespace UnitTestProject
  
             Assert.IsTrue(sum.Numerator  == 0);
         }
+
+        [TestMethod]
+        public void nonZeroPlusZero()
+        {
+            var sum = new Fraction(5).Plus(new Fraction(0));
+
+            Assert.IsTrue(sum.Numerator == 5);
+        }
     }
 }
