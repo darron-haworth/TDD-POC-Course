@@ -97,5 +97,22 @@ namespace UnitTestProject
             Assert.IsTrue(result.Equals(expectedResult));
         }
 
+        [TestMethod]
+        public void CanAddNegDenomFractionalNumbers()
+        {
+            //Arrange
+            var x = ((Rational) 2 / -3);
+            var y = (Rational) 1 / -2;
+            var expectedResult = x + y;
+            var fractions = new TDDFractions();
+            //Act
+            var result = fractions.AddFractions(x, y).ToMixedString();
+
+
+            //Assert
+            Console.Write("Result: " + result);
+            Assert.IsTrue(result.Equals(expectedResult.ToMixedString()));
+        }
+
     }
 }
