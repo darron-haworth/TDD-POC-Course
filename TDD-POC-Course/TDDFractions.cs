@@ -1,20 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Runtime.InteropServices;
-using System.Security.Cryptography.X509Certificates;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
+using MathExtension;
+
 
 namespace TDD_POC_Course
 {
-    public class Fractions
+    public class TDDFractions
     {
-
-        public double AddFractions(double x, double y)
+        public Rational AddFractions(Rational x, Rational y)
         {
+
             return x + y;
         }
     }
+
+
 }
