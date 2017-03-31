@@ -22,7 +22,7 @@ namespace TDD_POC_Course
 
         public Fraction Plus(Fraction fraction)
         {
-            var retFraction = new Fraction(1);
+            var retFraction = new Fraction(fraction.Numerator);
             return retFraction;
         }
 
