@@ -32,9 +32,7 @@ namespace TDD_POC_Course
 
         public Fraction Plus(Fraction newFraction)
         {
-            var thisDenom = this.Denominator;
-            var thatDenom = newFraction.Denominator;
-            var retFraction = new Fraction(this.Numerator + newFraction.Numerator, thisDenom);
+            var retFraction = new Fraction(this.Numerator + newFraction.Numerator, this.Denominator);
             return retFraction;
         }
 
