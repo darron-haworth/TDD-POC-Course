@@ -14,5 +14,12 @@ namespace UnitTestProject
         {
             Assert.IsTrue(new Fraction(3, 5).equals(new Fraction(3,5)));
         }
+
+        [TestMethod]
+        public void differentNumerators()
+        {
+            Assert.IsFalse(new Fraction(2, 5).equals(new Fraction(1, 5)));
+        }
+
     }
 }
