@@ -43,6 +43,11 @@ namespace TDD_POC_Course
             return false;
         }
 
+        public override int GetHashCode()
+        {
+            return Numerator*19 + Denominator;
+        }
+
         public override string ToString()
         {
             return $"{Numerator}/{Denominator}";
