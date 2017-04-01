@@ -27,5 +27,10 @@ namespace UnitTestProject
             Assert.IsFalse(new Fraction(2, 5).equals(new Fraction(1, 8)));
         }
 
+        [TestMethod] public void wholeNumberEqualsSameFraction()
+        {
+            Assert.IsTrue(new Fraction(5).equals(new Fraction(5, 1)));
+        }
+
     }
 }
