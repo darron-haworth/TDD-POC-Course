@@ -1,28 +1,33 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace TDD_POC_Course
 {
+    [SuppressMessage("ReSharper", "ConvertToAutoProperty")]
     public class Fraction
     {
-        public int Numerator { get; }
+        private readonly int _numerator;
+        private readonly int _denominator;
 
-        public int Denominator { get; }
+        public int Numerator => _numerator;
+
+        public int Denominator => _denominator;
 
 
         public  Fraction(int intValue)
         {
-            Numerator = intValue;
-            Denominator = 1;
+            _numerator = intValue;
+            _denominator = 1;
         }
 
         public Fraction(int numerator, int denominator)
         {
-            Numerator = numerator;
-            Denominator = denominator;
+            _numerator = numerator;
+            _denominator = denominator;
         }
 
         public Fraction Plus(Fraction newFraction)

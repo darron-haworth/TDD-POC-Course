@@ -58,7 +58,7 @@ namespace UnitTestProject
         }
 
         [TestMethod]
-        public void nonTrivialDenominator()
+        public void nonTrivialButCommonDenominator()
         {
             var sum = new Fraction(1, 5).Plus(new Fraction(3, 5));
 
