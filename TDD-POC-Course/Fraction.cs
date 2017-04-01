@@ -31,7 +31,7 @@ namespace TDD_POC_Course
             return retFraction;
         }
 
-        public Boolean equals(object otherFraction)
+        public override bool Equals(object otherFraction)
         {
             if (otherFraction.GetType() == typeof (Fraction))
             {
