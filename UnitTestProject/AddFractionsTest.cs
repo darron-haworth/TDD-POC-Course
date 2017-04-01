@@ -50,5 +50,12 @@ namespace UnitTestProject
         {
             Assert.AreEqual(new Fraction(4, 5), new Fraction(1, 5).Plus(new Fraction(3, 5)));
         }
+
+        [TestMethod]
+        public void differentDenominators()
+        {
+            Assert.AreEqual(new Fraction(5, 6), new Fraction(1, 2).Plus(new Fraction(1, 3)));
+        }
+
     }
 }

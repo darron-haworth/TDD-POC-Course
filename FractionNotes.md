@@ -11,6 +11,7 @@ Whole numbers
  0  + -6  =  -6  **DONE
 
  1/5 + 2/5 = 3/5 **DONE
+ 1/2 + 1/3 = 5/6
  1/8 + 1/8 = 1/2 - Common denoms
  3/4 + 3/4 = 3/2 needs reduce
 
@@ -23,4 +24,5 @@ Whole numbers
  -1/4 + 3/4 = 1/2
  3/8 + -1/2 = -1/8
  
-  
+ REDUCE 
+ EQUALS  **DONE
