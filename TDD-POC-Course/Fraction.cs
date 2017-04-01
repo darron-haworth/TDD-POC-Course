@@ -27,8 +27,16 @@ namespace TDD_POC_Course
 
         public Fraction Plus(Fraction newFraction)
         {
-            var retFraction = new Fraction(this.Numerator + newFraction.Numerator, this.Denominator);
-            return retFraction;
+            if (Denominator == newFraction.Denominator)
+            {
+                var retFraction = new Fraction(this.Numerator + newFraction.Numerator, this.Denominator);
+                return retFraction;
+            }
+            else
+            {
+                return this;
+            }
+            
         }
 
         public override bool Equals(object otherFraction)
