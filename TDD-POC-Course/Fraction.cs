@@ -18,10 +18,7 @@ namespace TDD_POC_Course
         public int Denominator => _denominator;
 
 
-        public Fraction(int intValue) : this(intValue, 1)
-        {}
-
-        public Fraction(int numerator, int denominator)
+        public Fraction(int numerator, int denominator = 1)
         {
             _numerator = numerator;
             _denominator = denominator;
