@@ -10,7 +10,7 @@ Whole numbers
 -3  +  0  =  -3  **DONE
  0  + -6  =  -6  **DONE
 
-
+ 1/5 + 2/5 = 3/5 **DONE
  1/8 + 1/8 = 1/2 - Common denoms
  3/4 + 3/4 = 3/2 needs reduce
 
