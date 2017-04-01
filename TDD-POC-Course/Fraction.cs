@@ -4,6 +4,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+// ReSharper disable All
 
 namespace TDD_POC_Course
 {
@@ -30,5 +31,21 @@ namespace TDD_POC_Course
             return retFraction;
         }
 
+        public Boolean equals(object otherFraction)
+        {
+            if (otherFraction.GetType() == typeof (Fraction))
+            {
+                var fractionToCompare = (Fraction)otherFraction;
+                return Numerator == fractionToCompare.Numerator &&
+                       Denominator == fractionToCompare.Denominator;
+
+            }
+            return false;
+        }
+
+        public override string ToString()
+        {
+            return $"{Numerator}/{Denominator}";
+        }
     }
 }
