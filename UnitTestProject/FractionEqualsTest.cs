@@ -21,5 +21,11 @@ namespace UnitTestProject
             Assert.IsFalse(new Fraction(2, 5).equals(new Fraction(1, 5)));
         }
 
+        [TestMethod]
+        public void differentDenominators()
+        {
+            Assert.IsFalse(new Fraction(2, 5).equals(new Fraction(1, 8)));
+        }
+
     }
 }
