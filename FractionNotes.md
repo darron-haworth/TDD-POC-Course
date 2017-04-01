@@ -3,12 +3,12 @@
 Test cases:
 
 Whole numbers
- 0  +  0  =   0
- 3  +  0  =   3
- 0  +  5  =   5
- 5  +  8 =   13
--3  +  0  =  -3
- 0  + -6  =  -6
+ 0  +  0  =   0  **DONE
+ 5  +  0  =   3  **DONE
+ 0  +  5  =   5  **DONE
+ 5  +  8 =   13  **DONE
+-3  +  0  =  -3  **DONE
+ 0  + -6  =  -6  **DONE
 
 
  1/8 + 1/8 = 1/2 - Common denoms

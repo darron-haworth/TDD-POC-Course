@@ -20,10 +20,17 @@ namespace TDD_POC_Course
             Denominator = 1;
         }
 
+        public Fraction(int numerator, int denominator)
+        {
+            Numerator = numerator;
+            Denominator = denominator;
+        }
+
         public Fraction Plus(Fraction newFraction)
         {
-            var thisFraction = this;
-            var retFraction = new Fraction(thisFraction.Numerator + newFraction.Numerator);
+            var thisDenom = this.Denominator;
+            var thatDenom = newFraction.Denominator;
+            var retFraction = new Fraction(this.Numerator + newFraction.Numerator, thisDenom);
             return retFraction;
         }
 
