@@ -8,11 +8,10 @@ namespace TDD_POC_Course
 {
     public class Fraction
     {
+        public int Numerator { get; }
 
-        public int Numerator { get; set; }
-        public int Denominator { get; set; }
+        public int Denominator { get; }
 
-           
 
         public  Fraction(int intValue)
         {
