@@ -27,5 +27,11 @@ namespace UnitTestProject
             Assert.AreEqual(new Fraction(6), new Fraction(24, 4));
         }
 
+        [TestMethod]
+        public void reduceToZero()
+        {
+            Assert.AreEqual(new Fraction(0), new Fraction(0, 5465321));
+        }
+
     }
 }
