@@ -30,22 +30,15 @@ namespace TDD_POC_Course
 
         public Fraction Plus(Fraction that)
         {
-            if ( this._denominator != that.Denominator)
-            {
-                var newNum = this._numerator * that.Denominator + that.Numerator * this._denominator;
-                var newDenom = this._denominator * that.Denominator;
-                var retFraction = new Fraction(newNum, newDenom);
-                return retFraction;
-            }
-            else
-            {
-                return new Fraction(Numerator + that.Numerator, Denominator);
-            }
+            var newNum = this._numerator * that.Denominator + that.Numerator * this._denominator;
+            var newDenom = this._denominator * that.Denominator;
+            var retFraction = new Fraction(newNum, newDenom);
+            return retFraction;
         }
 
         public override bool Equals(object otherFraction)
         {
-            if (otherFraction.GetType() == typeof (Fraction))
+            if (otherFraction.GetType() == typeof(Fraction))
             {
                 var fractionToCompare = (Fraction)otherFraction;
                 return Numerator == fractionToCompare.Numerator &&
@@ -57,7 +50,7 @@ namespace TDD_POC_Course
 
         public override int GetHashCode()
         {
-            return Numerator*19 + Denominator;
+            return Numerator * 19 + Denominator;
         }
 
         public override string ToString()
