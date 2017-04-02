@@ -22,6 +22,7 @@ namespace TDD_POC_Course
         public Fraction(int numerator, int denominator = 1)
         {
             var signOfDenominator = denominator < 0 ? -1 : 1;
+            //GCD contract never returns zero
             var gcd = NumberTheory.GreatestCommonDenominator(numerator, denominator) * signOfDenominator;
             _numerator = numerator / gcd;
             _denominator = denominator / gcd;

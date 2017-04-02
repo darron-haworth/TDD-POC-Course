@@ -41,5 +41,14 @@ namespace UnitTestProject
             Assert.AreEqual(4, NumberTheory.GreatestCommonDenominator(24, -28));
         }
 
+        [TestMethod]
+        public void gcdZeroTests()
+        {
+            Assert.AreEqual(1, NumberTheory.GreatestCommonDenominator(1, 0));
+            Assert.AreEqual(5, NumberTheory.GreatestCommonDenominator(0, 5));
+            Assert.AreEqual(0, NumberTheory.GreatestCommonDenominator(0, 0));
+
+        }
+
     }
 }
