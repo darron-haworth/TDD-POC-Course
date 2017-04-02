@@ -25,18 +25,19 @@ namespace TDD_POC_Course
             _denominator = denominator;
         }
 
-        public Fraction Plus(Fraction newFraction)
+        public Fraction Plus(Fraction that)
         {
-            if (Denominator == newFraction.Denominator)
+            if ( this._denominator != that.Denominator)
             {
-                var retFraction = new Fraction(this.Numerator + newFraction.Numerator, this.Denominator);
+                var newNum = this._numerator * that.Denominator + that.Numerator * this._denominator;
+                var newDenom = this._denominator * that.Denominator;
+                var retFraction = new Fraction(newNum, newDenom);
                 return retFraction;
             }
             else
             {
-                return this;
+                return new Fraction(Numerator + that.Numerator, Denominator);
             }
-            
         }
 
         public override bool Equals(object otherFraction)
