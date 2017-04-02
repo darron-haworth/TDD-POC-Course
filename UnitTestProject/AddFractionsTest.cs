@@ -56,5 +56,47 @@ namespace UnitTestProject
         {
             Assert.AreEqual(new Fraction(1, 2).Plus(new Fraction(1, 3)), new Fraction(5, 6));
         }
+
+        [TestMethod]
+        public void reduceResultToWholeNumber()
+        {
+            Assert.AreEqual(new Fraction(1), new Fraction(1,3).Plus(new Fraction(2, 3)));
+        }
+
+        [TestMethod]
+        public void onDenominatorIsAMultipleOfTheOther()
+        {
+            Assert.AreEqual(new Fraction(11, 8), new Fraction(3, 4).Plus(new Fraction(5, 8)));
+        }
+
+        [TestMethod]
+        public void commonFactorInDenominators()
+        {
+            Assert.AreEqual(new Fraction(11, 18), new Fraction(1, 6).Plus(new Fraction(4, 9)));
+        }
+
+        [TestMethod]
+        public void reducedResultEvenWhenDenominatorsAreTheSame()
+        {
+            Assert.AreEqual(new Fraction(3, 2), new Fraction(3, 4).Plus(new Fraction(3, 4)));
+        }
+
+        [TestMethod]
+        public void negativeFractionAndReducing1()
+        {
+            Assert.AreEqual(new Fraction(1, 2), new Fraction(-1, 4).Plus(new Fraction(3, 4)));
+        }
+
+        [TestMethod]
+        public void negativeFractionAndReducing2()
+        {
+            Assert.AreEqual(new Fraction(-1, 8), new Fraction(3, 8).Plus(new Fraction(-1, 2)));
+        }
+
+        [TestMethod]
+        public void negativeFractionAndReducing3()
+        {
+            Assert.AreEqual(new Fraction(1, 2), new Fraction(1, -4).Plus(new Fraction(-3, -4)));
+        }
     }
 }

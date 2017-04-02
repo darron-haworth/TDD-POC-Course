@@ -38,5 +38,17 @@ namespace UnitTestProject
             Assert.IsFalse(new Fraction(5).Equals(new Fraction(6)));
         }
 
+        [TestMethod]
+        public void negativeDenominator()
+        {
+            Assert.AreEqual(new Fraction(1, 2), new Fraction(-1, -2));
+        }
+
+        [TestMethod]
+        public void negativeDenominatorReversed()
+        {
+            Assert.AreEqual(new Fraction(-1, 2), new Fraction(1, -2));
+        }
+
     }
 }
