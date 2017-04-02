@@ -16,9 +16,16 @@ namespace UnitTestProject
         }
 
         [TestMethod]
-        public void reduceToNoWholeNumber()
+        public void reduceToNotWholeNumber()
         {
             Assert.AreEqual(new Fraction(6, 8), new Fraction(3, 4));
         }
+
+        [TestMethod]
+        public void reduceToWholeNumber()
+        {
+            Assert.AreEqual(new Fraction(6), new Fraction(24, 4));
+        }
+
     }
 }
