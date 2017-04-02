@@ -61,6 +61,7 @@
     <Compile Include="AddFractionsTest.cs" />
     <Compile Include="FractionEqualsTest.cs" />
     <Compile Include="ReduceFractionTest.cs" />
+    <Compile Include="GreatestCommonDivisor.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TDD-POC-Course\TDD-POC-Course.csproj">

@@ -21,8 +21,9 @@ namespace TDD_POC_Course
 
         public Fraction(int numerator, int denominator = 1)
         {
-            _numerator = numerator;
-            _denominator = denominator;
+            var gcd = NumberTheory.GreatestCommonDenominator(numerator, denominator);
+            _numerator = numerator / gcd;
+            _denominator = denominator / gcd;
         }
 
         public Fraction Plus(Fraction that)
