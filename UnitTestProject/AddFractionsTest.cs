@@ -56,6 +56,5 @@ namespace UnitTestProject
         {
             Assert.AreEqual(new Fraction(1, 2).Plus(new Fraction(1, 3)), new Fraction(5, 6));
         }
-
     }
 }

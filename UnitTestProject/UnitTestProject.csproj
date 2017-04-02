@@ -60,6 +60,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="AddFractionsTest.cs" />
     <Compile Include="FractionEqualsTest.cs" />
+    <Compile Include="ReduceFractionTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TDD-POC-Course\TDD-POC-Course.csproj">
