@@ -32,6 +32,9 @@ namespace TDD_POC_Course.PointOfSale
                 case "22345678":
                     Display.SetText("$12.50");
                     break;
+                case "":
+                    Display.SetText("Scanning error: no barcode");
+                    break;
                 default:
                     Display.SetText($"Product not found for barcode: {barcode}");
                     break;
