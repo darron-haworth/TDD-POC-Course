@@ -33,7 +33,7 @@ namespace TDD_POC_Course.PointOfSale
                     Display.SetText("$12.50");
                     break;
                 default:
-                    Display.SetText("Not Found");
+                    Display.SetText($"Product not found for barcode: {barcode}");
                     break;
             }
         }

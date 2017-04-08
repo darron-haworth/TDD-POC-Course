@@ -25,8 +25,9 @@ namespace POSUnitTests
         [TestMethod]
         public void ProductNotFound()
         {
-            Sale.OnBarCode("92345678");
-            Assert.AreEqual("$12.50", Display.GetText());
+            var barcode = "92345678";
+            Sale.OnBarCode(barcode);
+            Assert.AreEqual($"Product not found for barcode: {barcode}", Display.GetText());
         }
     }
 }
