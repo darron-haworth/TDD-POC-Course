@@ -8,9 +8,15 @@ namespace TDD_POC_Course.PointOfSale
 {
     public static class Display
     {
+        private static string _displayText;
         public static string GetText()
         {
-            return "$7.95";
+            return _displayText;
+        }
+
+        public static void SetText(string displayText)
+        {
+            _displayText = displayText;
         }
     }
 
@@ -18,7 +24,7 @@ namespace TDD_POC_Course.PointOfSale
     {
         public static void OnBarCode(string barcode)
         {
-            
+            Display.SetText("$7.95");   
         }
     }
 }
