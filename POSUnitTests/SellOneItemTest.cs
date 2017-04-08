@@ -9,32 +9,46 @@ namespace POSUnitTests
     [TestClass]
     public class SellOneItemTest
     {
+        
+        
+        [TestInitialize()]
+        public void Initialize()
+        {
+        }
+
+        [TestCleanup()]
+        public void Cleanup()
+        {
+        }
+
         [TestMethod]
         public void ProductFound()
         {
+            var thisDisplay = new Display();
             var pricesByBarcode = new Dictionary<string, string>()
             {
                 {"12345678", "$7.95"}
             };
 
-            var testSale = new Sale(pricesByBarcode);
+            var testSale = new Sale(thisDisplay, pricesByBarcode);
             testSale.OnBarCode("12345678");
-            Console.Write(Display.GetText());
-            Assert.AreEqual("$7.95", Display.GetText());
+            Console.Write(thisDisplay.GetText());
+            Assert.AreEqual("$7.95", thisDisplay.GetText());
         }
 
         [TestMethod]
         public void AnotherProductFound()
         {
+            var thisDisplay = new Display();
             var pricesByBarcode = new Dictionary<string, string>()
             {
                 {"22345678", "$12.50"}
             };
 
-            var testSale = new Sale(pricesByBarcode);
+            var testSale = new Sale(thisDisplay, pricesByBarcode);
             testSale.OnBarCode("22345678");
-            Console.Write(Display.GetText());
-            Assert.AreEqual("$12.50", Display.GetText());
+            Console.Write(thisDisplay.GetText());
+            Assert.AreEqual("$12.50", thisDisplay.GetText());
         }
 
         [TestMethod]
@@ -44,30 +58,31 @@ namespace POSUnitTests
             {
                 {"12345678", "$7.95"}
             };
-
-            var testSale = new Sale(pricesByBarcode);
+            var thisDisplay = new Display();
+            var testSale = new Sale(thisDisplay, pricesByBarcode);
             testSale.OnBarCode("5678");
-            Console.Write(Display.GetText());
-            Assert.AreEqual($"Product not found for barcode: {"5678"}", Display.GetText());
+            Console.Write(thisDisplay.GetText());
+            Assert.AreEqual($"Product not found for barcode: {"5678"}", thisDisplay.GetText());
         }
 
         [TestMethod]
         public void EmptyBarcode()
         {
-            var testSale = new Sale(null);
+            var thisDisplay = new Display();
+            var testSale = new Sale(thisDisplay, null);
             testSale.OnBarCode("");
-            Console.Write(Display.GetText());
-            Assert.AreEqual("Scanning error: no barcode", Display.GetText());
+            Console.Write(thisDisplay.GetText());
+            Assert.AreEqual("Scanning error: no barcode", thisDisplay.GetText());
         }
 
         [TestMethod]
         public void NullBarcode()
         {
-            
-            var testSale = new Sale(null);
+           var thisDisplay = new Display();
+            var testSale = new Sale(thisDisplay, null);
             testSale.OnBarCode(null);
-            Console.Write(Display.GetText());
-            Assert.AreEqual("Null barcode", Display.GetText());
+            Console.Write(thisDisplay.GetText());
+            Assert.AreEqual("Null barcode", thisDisplay.GetText());
         }
     }
 }

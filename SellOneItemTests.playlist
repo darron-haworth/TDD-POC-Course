@@ -1,0 +1,1 @@
+<Playlist Version="1.0"><Add Test="POSUnitTests.SellOneItemTest.AnotherProductFound" /><Add Test="POSUnitTests.SellOneItemTest.ProductNotFound" /><Add Test="POSUnitTests.SellOneItemTest.NullBarcode" /><Add Test="POSUnitTests.SellOneItemTest.EmptyBarcode" /><Add Test="POSUnitTests.SellOneItemTest.ProductFound" /></Playlist>
