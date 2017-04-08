@@ -12,6 +12,7 @@ namespace POSUnitTests
         public void ProductFound()
         {
             Sale.OnBarCode("12345678");
+            Console.Write(Display.GetText());
             Assert.AreEqual("$7.95", Display.GetText());
         }
 
@@ -19,15 +20,26 @@ namespace POSUnitTests
         public void AnotherProductFound()
         {
             Sale.OnBarCode("22345678");
+            Console.Write(Display.GetText());
             Assert.AreEqual("$12.50", Display.GetText());
         }
 
         [TestMethod]
         public void ProductNotFound()
         {
-            var barcode = "92345678";
+            var barcode = "5678";
             Sale.OnBarCode(barcode);
+            Console.Write(Display.GetText());
             Assert.AreEqual($"Product not found for barcode: {barcode}", Display.GetText());
+        }
+
+        [TestMethod]
+        public void EmptyBarcode()
+        {
+            var barcode = "";
+            Sale.OnBarCode(barcode);
+            Console.Write(Display.GetText());
+            Assert.AreEqual("Scanning error: no barcode", Display.GetText());
         }
     }
 }
