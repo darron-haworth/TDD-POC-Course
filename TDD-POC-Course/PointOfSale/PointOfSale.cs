@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,23 +25,22 @@ namespace TDD_POC_Course.PointOfSale
     {
         public static void OnBarCode(string barcode)
         {
-            switch (barcode)
+
+            var pricesByBarcode = new Dictionary<string, string>()
             {
-                case null:
-                    Display.SetText("Null barcode");
-                    break;
-                case "12345678":
-                    Display.SetText("$7.95");
-                    break;
-                case "22345678":
-                    Display.SetText("$12.50");
-                    break;
-                case "":
-                    Display.SetText("Scanning error: no barcode");
-                    break;
-                default:
-                    Display.SetText($"Product not found for barcode: {barcode}");
-                    break;
+                {"12345678", "$7.95"},
+                {"22345678", "$12.50"}
+            };
+
+            if (string.IsNullOrEmpty(barcode))
+            {
+                Display.SetText(barcode == null ? "Null barcode" : "Scanning error: no barcode");
+            }
+            else
+            {
+                Display.SetText(pricesByBarcode.ContainsKey(barcode)
+                ? pricesByBarcode[barcode]
+                : $"Product not found for barcode: {barcode}");
             }
         }
     }
