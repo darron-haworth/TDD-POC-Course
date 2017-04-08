@@ -41,5 +41,13 @@ namespace POSUnitTests
             Console.Write(Display.GetText());
             Assert.AreEqual("Scanning error: no barcode", Display.GetText());
         }
+
+        [TestMethod]
+        public void NullBarcode()
+        {
+            Sale.OnBarCode(null);
+            Console.Write(Display.GetText());
+            Assert.AreEqual("Null barcode", Display.GetText());
+        }
     }
 }

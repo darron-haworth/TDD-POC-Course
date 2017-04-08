@@ -26,6 +26,9 @@ namespace TDD_POC_Course.PointOfSale
         {
             switch (barcode)
             {
+                case null:
+                    Display.SetText("Null barcode");
+                    break;
                 case "12345678":
                     Display.SetText("$7.95");
                     break;
