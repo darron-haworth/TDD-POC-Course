@@ -54,12 +54,7 @@ namespace POSUnitTests
         [TestMethod]
         public void EmptyBarcode()
         {
-            var pricesByBarcode = new Dictionary<string, string>()
-            {
-                {"12345678", "$7.95"}
-            };
-
-            var testSale = new Sale(pricesByBarcode);
+            var testSale = new Sale(null);
             testSale.OnBarCode("");
             Console.Write(Display.GetText());
             Assert.AreEqual("Scanning error: no barcode", Display.GetText());
@@ -68,12 +63,8 @@ namespace POSUnitTests
         [TestMethod]
         public void NullBarcode()
         {
-            var pricesByBarcode = new Dictionary<string, string>()
-            {
-                {"12345678", "$7.95"}
-            };
-
-            var testSale = new Sale(pricesByBarcode);
+            
+            var testSale = new Sale(null);
             testSale.OnBarCode(null);
             Console.Write(Display.GetText());
             Assert.AreEqual("Null barcode", Display.GetText());
