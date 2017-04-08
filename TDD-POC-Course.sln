@@ -5,12 +5,15 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TDD-POC-Course", "TDD-POC-Course\TDD-POC-Course.csproj", "{4BFD6A3A-4542-42DC-8AEB-18B99E392358}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject", "UnitTestProject\UnitTestProject.csproj", "{1E4B2CD1-A70C-45AB-91A1-09A3AF7FC46F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FractionsUnitTestProject", "UnitTestProject\FractionsUnitTestProject.csproj", "{1E4B2CD1-A70C-45AB-91A1-09A3AF7FC46F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Folder", "Solution Folder", "{8328BAF1-57BF-4996-ABCC-1EF45EF371B5}"
 	ProjectSection(SolutionItems) = preProject
 		FractionNotes.md = FractionNotes.md
+		SellOneItemNotes.md = SellOneItemNotes.md
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POSUnitTests", "POSUnitTests\POSUnitTests.csproj", "{3CDC436B-5453-48C0-9E38-FB8565097DF2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -56,6 +59,22 @@ Global
 		{1E4B2CD1-A70C-45AB-91A1-09A3AF7FC46F}.Release|x64.Build.0 = Release|Any CPU
 		{1E4B2CD1-A70C-45AB-91A1-09A3AF7FC46F}.Release|x86.ActiveCfg = Release|Any CPU
 		{1E4B2CD1-A70C-45AB-91A1-09A3AF7FC46F}.Release|x86.Build.0 = Release|Any CPU
+		{3CDC436B-5453-48C0-9E38-FB8565097DF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CDC436B-5453-48C0-9E38-FB8565097DF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CDC436B-5453-48C0-9E38-FB8565097DF2}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{3CDC436B-5453-48C0-9E38-FB8565097DF2}.Debug|ARM.Build.0 = Debug|Any CPU
+		{3CDC436B-5453-48C0-9E38-FB8565097DF2}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{3CDC436B-5453-48C0-9E38-FB8565097DF2}.Debug|x64.Build.0 = Debug|Any CPU
+		{3CDC436B-5453-48C0-9E38-FB8565097DF2}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3CDC436B-5453-48C0-9E38-FB8565097DF2}.Debug|x86.Build.0 = Debug|Any CPU
+		{3CDC436B-5453-48C0-9E38-FB8565097DF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CDC436B-5453-48C0-9E38-FB8565097DF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CDC436B-5453-48C0-9E38-FB8565097DF2}.Release|ARM.ActiveCfg = Release|Any CPU
+		{3CDC436B-5453-48C0-9E38-FB8565097DF2}.Release|ARM.Build.0 = Release|Any CPU
+		{3CDC436B-5453-48C0-9E38-FB8565097DF2}.Release|x64.ActiveCfg = Release|Any CPU
+		{3CDC436B-5453-48C0-9E38-FB8565097DF2}.Release|x64.Build.0 = Release|Any CPU
+		{3CDC436B-5453-48C0-9E38-FB8565097DF2}.Release|x86.ActiveCfg = Release|Any CPU
+		{3CDC436B-5453-48C0-9E38-FB8565097DF2}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
