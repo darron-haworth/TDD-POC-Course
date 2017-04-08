@@ -24,7 +24,18 @@ namespace TDD_POC_Course.PointOfSale
     {
         public static void OnBarCode(string barcode)
         {
-            Display.SetText("$7.95");   
+            switch (barcode)
+            {
+                case "12345678":
+                    Display.SetText("$7.95");
+                    break;
+                case "22345678":
+                    Display.SetText("$12.50");
+                    break;
+                default:
+                    Display.SetText("Not Found");
+                    break;
+            }
         }
     }
 }

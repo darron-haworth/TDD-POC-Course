@@ -21,5 +21,12 @@ namespace POSUnitTests
             Sale.OnBarCode("22345678");
             Assert.AreEqual("$12.50", Display.GetText());
         }
+
+        [TestMethod]
+        public void ProductNotFound()
+        {
+            Sale.OnBarCode("92345678");
+            Assert.AreEqual("$12.50", Display.GetText());
+        }
     }
 }
