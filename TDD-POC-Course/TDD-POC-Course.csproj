@@ -45,8 +45,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Fraction.cs" />
-    <Compile Include="NumberTheory.cs" />
+    <Compile Include="AddFractions\Fraction.cs" />
+    <Compile Include="AddFractions\NumberTheory.cs" />
     <Compile Include="PointOfSale\PointOfSale.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
