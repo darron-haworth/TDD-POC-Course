@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TDD_POC_Course.PointOfSale;
@@ -11,7 +12,13 @@ namespace POSUnitTests
         [TestMethod]
         public void ProductFound()
         {
-            Sale.OnBarCode("12345678");
+            var pricesByBarcode = new Dictionary<string, string>()
+            {
+                {"12345678", "$7.95"}
+            };
+
+            var testSale = new Sale(pricesByBarcode);
+            testSale.OnBarCode("12345678");
             Console.Write(Display.GetText());
             Assert.AreEqual("$7.95", Display.GetText());
         }
@@ -19,7 +26,13 @@ namespace POSUnitTests
         [TestMethod]
         public void AnotherProductFound()
         {
-            Sale.OnBarCode("22345678");
+            var pricesByBarcode = new Dictionary<string, string>()
+            {
+                {"22345678", "$12.50"}
+            };
+
+            var testSale = new Sale(pricesByBarcode);
+            testSale.OnBarCode("22345678");
             Console.Write(Display.GetText());
             Assert.AreEqual("$12.50", Display.GetText());
         }
@@ -27,17 +40,27 @@ namespace POSUnitTests
         [TestMethod]
         public void ProductNotFound()
         {
-            var barcode = "5678";
-            Sale.OnBarCode(barcode);
+            var pricesByBarcode = new Dictionary<string, string>()
+            {
+                {"12345678", "$7.95"}
+            };
+
+            var testSale = new Sale(pricesByBarcode);
+            testSale.OnBarCode("5678");
             Console.Write(Display.GetText());
-            Assert.AreEqual($"Product not found for barcode: {barcode}", Display.GetText());
+            Assert.AreEqual($"Product not found for barcode: {"5678"}", Display.GetText());
         }
 
         [TestMethod]
         public void EmptyBarcode()
         {
-            var barcode = "";
-            Sale.OnBarCode(barcode);
+            var pricesByBarcode = new Dictionary<string, string>()
+            {
+                {"12345678", "$7.95"}
+            };
+
+            var testSale = new Sale(pricesByBarcode);
+            testSale.OnBarCode("");
             Console.Write(Display.GetText());
             Assert.AreEqual("Scanning error: no barcode", Display.GetText());
         }
@@ -45,7 +68,13 @@ namespace POSUnitTests
         [TestMethod]
         public void NullBarcode()
         {
-            Sale.OnBarCode(null);
+            var pricesByBarcode = new Dictionary<string, string>()
+            {
+                {"12345678", "$7.95"}
+            };
+
+            var testSale = new Sale(pricesByBarcode);
+            testSale.OnBarCode(null);
             Console.Write(Display.GetText());
             Assert.AreEqual("Null barcode", Display.GetText());
         }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Dynamic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,27 +22,25 @@ namespace TDD_POC_Course.PointOfSale
         }
     }
 
-    public static class Sale
+    public class Sale
     {
-        public static void OnBarCode(string barcode)
+        public Sale(Dictionary<string, string> pricesByBarcode )
         {
-
-            var pricesByBarcode = new Dictionary<string, string>()
-            {
-                {"12345678", "$7.95"},
-                {"22345678", "$12.50"}
-            };
-
+            PricesByBarcode = pricesByBarcode;
+        }
+        public static Dictionary<string, string> PricesByBarcode { get; set; }
+        public void OnBarCode(string barcode)
+        {
             if (string.IsNullOrEmpty(barcode))
             {
                 Display.SetText(barcode == null ? "Null barcode" : "Scanning error: no barcode");
+                return;
             }
-            else
-            {
-                Display.SetText(pricesByBarcode.ContainsKey(barcode)
-                ? pricesByBarcode[barcode]
-                : $"Product not found for barcode: {barcode}");
-            }
+
+            Display.SetText(PricesByBarcode.ContainsKey(barcode)
+            ? PricesByBarcode[barcode]
+            : $"Product not found for barcode: {barcode}");
+
         }
     }
 }
