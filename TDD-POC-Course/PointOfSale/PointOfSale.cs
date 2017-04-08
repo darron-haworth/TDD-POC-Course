@@ -10,7 +10,7 @@ namespace TDD_POC_Course.PointOfSale
     {
         public static string GetText()
         {
-            return null;
+            return "$7.95";
         }
     }
 
