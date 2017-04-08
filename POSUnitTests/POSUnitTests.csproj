@@ -53,6 +53,12 @@
     <Compile Include="SellOneItemTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TDD-POC-Course\TDD-POC-Course.csproj">
+      <Project>{4BFD6A3A-4542-42DC-8AEB-18B99E392358}</Project>
+      <Name>TDD-POC-Course</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
