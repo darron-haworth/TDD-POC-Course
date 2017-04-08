@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace POSUnitTests
@@ -9,7 +10,7 @@ namespace POSUnitTests
         [TestMethod]
         public void ProductFound()
         {
-            Assert.Fail();
+            Assert.AreEqual("$7.95", Display.GetText());
         }
     }
 }
