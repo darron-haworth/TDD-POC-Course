@@ -20,6 +20,16 @@ namespace TDD_POC_Course.PointOfSale
         {
             _displayText = displayText;
         }
+
+        public void SetProductNotFoundMessage(string barcode)
+        {
+            _displayText = ($"Product not found for barcode: {barcode}");
+        }
+
+        public void SetEmptyBarcodeMessage(string barcode)
+        {
+            _displayText = barcode==null ? "Null barcode" : "Scanning error: no barcode";
+        }
     }
 
     public class Sale
@@ -41,7 +51,7 @@ namespace TDD_POC_Course.PointOfSale
             {
                 if(string.IsNullOrEmpty(barcode))
                 {
-                    displayEmptyBarcodeMessage(barcode);
+                    ThisDisplay.SetEmptyBarcodeMessage(barcode);
                     return;
                 } else if(barcode == string.Empty)
                 {
@@ -54,35 +64,21 @@ namespace TDD_POC_Course.PointOfSale
 
             if (string.IsNullOrEmpty(priceAsText))
             {
-                displayProductNotFoundMessage(barcode);
+                ThisDisplay.SetProductNotFoundMessage(barcode);
             }
             else
             {
-                DisplayPrice(priceAsText);
+                ThisDisplay.SetText(priceAsText);
             }
         }
 
-        private void DisplayPrice(string priceAsText)
-        {
-            ThisDisplay.SetText(priceAsText);
-        }
         private string FindPrice(string barcode)
         {
             if(PricesByBarcode.ContainsKey(barcode))
             {
                 return PricesByBarcode[barcode];
             }
-            return "";
-        }
-
-        private void displayProductNotFoundMessage(string barcode)
-        {
-            ThisDisplay.SetText($"Product not found for barcode: {barcode}");
-        }
-
-        private void displayEmptyBarcodeMessage(string barcode)
-        {
-            ThisDisplay.SetText(barcode == null ? "Null barcode" : "Scanning error: no barcode");
+            return null;
         }
     }
 }
