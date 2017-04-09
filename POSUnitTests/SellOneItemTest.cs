@@ -26,10 +26,10 @@ namespace POSUnitTests
 
         }
 
-        [TestCleanup()]
-        public void Cleanup()
-        {
-        }
+        //[TestCleanup()]
+        //public void Cleanup()
+        //{
+        //}
 
         [TestMethod]
         public void ProductFound()

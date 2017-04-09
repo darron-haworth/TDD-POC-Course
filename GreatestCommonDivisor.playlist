@@ -1,0 +1,1 @@
+<Playlist Version="1.0"><Add Test="UnitTestProject.GreatestCommonDivisor.relativelyPrime" /><Add Test="UnitTestProject.GreatestCommonDivisor.gcdZeroTests" /><Add Test="UnitTestProject.GreatestCommonDivisor.oneIsMultipleOfTheOther" /><Add Test="UnitTestProject.GreatestCommonDivisor.oneAndOne" /><Add Test="UnitTestProject.GreatestCommonDivisor.commonFactor" /></Playlist>
