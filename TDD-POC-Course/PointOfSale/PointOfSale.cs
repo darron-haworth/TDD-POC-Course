@@ -24,7 +24,7 @@ namespace TDD_POC_Course.PointOfSale
 
     public class Sale
     {
-        public Sale(Display display, Dictionary<string, string> pricesByBarcode )
+        public Sale(Display display, Dictionary<string, string> pricesByBarcode)
         {
             PricesByBarcode = pricesByBarcode;
             ThisDisplay = display;
@@ -35,14 +35,34 @@ namespace TDD_POC_Course.PointOfSale
         {
             if (string.IsNullOrEmpty(barcode))
             {
-                ThisDisplay.SetText(barcode == null ? "Null barcode" : "Scanning error: no barcode");
+                displayEmptyBarcodeMessage(barcode);
                 return;
             }
 
-            ThisDisplay.SetText(PricesByBarcode.ContainsKey(barcode)
-            ? PricesByBarcode[barcode]
-            : $"Product not found for barcode: {barcode}");
+            if (PricesByBarcode.ContainsKey(barcode))
+            {
+                displayPrice(barcode);
+            }
+            else
+            {
+                displayProcutNotFoundMessage(barcode);
+            }
 
+        }
+
+        private void displayPrice(string barcode)
+        {
+            ThisDisplay.SetText(PricesByBarcode[barcode]);
+        }
+
+        private void displayProcutNotFoundMessage(string barcode)
+        {
+            ThisDisplay.SetText($"Product not found for barcode: {barcode}");
+        }
+
+        private void displayEmptyBarcodeMessage(string barcode)
+        {
+            ThisDisplay.SetText(barcode == null ? "Null barcode" : "Scanning error: no barcode");
         }
     }
 }
