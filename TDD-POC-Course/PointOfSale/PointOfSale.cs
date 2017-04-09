@@ -31,31 +31,51 @@ namespace TDD_POC_Course.PointOfSale
         }
         public Dictionary<string, string> PricesByBarcode { get; set; }
         public Display ThisDisplay { get; set; }
+
+
+
+
         public void OnBarCode(string barcode)
         {
             if (string.IsNullOrEmpty(barcode))
             {
-                displayEmptyBarcodeMessage(barcode);
-                return;
+                if(string.IsNullOrEmpty(barcode))
+                {
+                    displayEmptyBarcodeMessage(barcode);
+                    return;
+                } else if(barcode == string.Empty)
+                {
+                    ThisDisplay.SetText("Scanning error: no barcode");
+                }
             }
 
-            if (PricesByBarcode.ContainsKey(barcode))
+            
+            var priceAsText = FindPrice(barcode);
+
+            if (string.IsNullOrEmpty(priceAsText))
             {
-                displayPrice(barcode);
+                displayProductNotFoundMessage(barcode);
             }
             else
             {
-                displayProcutNotFoundMessage(barcode);
+                DisplayPrice(priceAsText);
             }
-
         }
 
-        private void displayPrice(string barcode)
+        private void DisplayPrice(string priceAsText)
         {
-            ThisDisplay.SetText(PricesByBarcode[barcode]);
+            ThisDisplay.SetText(priceAsText);
+        }
+        private string FindPrice(string barcode)
+        {
+            if(PricesByBarcode.ContainsKey(barcode))
+            {
+                return PricesByBarcode[barcode];
+            }
+            return "";
         }
 
-        private void displayProcutNotFoundMessage(string barcode)
+        private void displayProductNotFoundMessage(string barcode)
         {
             ThisDisplay.SetText($"Product not found for barcode: {barcode}");
         }
