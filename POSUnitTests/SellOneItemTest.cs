@@ -11,18 +11,17 @@ namespace POSUnitTests
     {
         public Sale mySale { get; set; }
         public Display myDisplay { get; set; }
-        public Dictionary<string,string> myData { get; set; }
         
         [TestInitialize()]
         public void Initialize()
         {
-            var pricesByBarcode = new Dictionary<string, string>()
+            var catelog = new Catalog(new Dictionary<string, string>()
             {
                 {"12345678", "$7.95"},
                 {"22345678", "$12.50"}
-            };
+            });
             myDisplay = new Display();
-            mySale = new Sale(myDisplay, pricesByBarcode);
+            mySale = new Sale(myDisplay, catelog);
 
         }
 
@@ -66,4 +65,6 @@ namespace POSUnitTests
             Assert.AreEqual("Null barcode", myDisplay.GetText());
         }
     }
+
+    
 }

@@ -28,19 +28,20 @@ namespace TDD_POC_Course.PointOfSale
 
         public void SetEmptyBarcodeMessage(string barcode)
         {
-            _displayText = barcode==null ? "Null barcode" : "Scanning error: no barcode";
+            _displayText = barcode == null ? "Null barcode" : "Scanning error: no barcode";
         }
     }
 
     public class Sale
     {
-        public Sale(Display display, Dictionary<string, string> pricesByBarcode)
+        public Sale(Display display, Catalog catalog)
         {
-            PricesByBarcode = pricesByBarcode;
+            ThisCatalog = catalog;
             ThisDisplay = display;
         }
-        public Dictionary<string, string> PricesByBarcode { get; set; }
+
         public Display ThisDisplay { get; set; }
+        public Catalog ThisCatalog { get; set; }
 
 
 
@@ -49,17 +50,18 @@ namespace TDD_POC_Course.PointOfSale
         {
             if (string.IsNullOrEmpty(barcode))
             {
-                if(string.IsNullOrEmpty(barcode))
+                if (string.IsNullOrEmpty(barcode))
                 {
                     ThisDisplay.SetEmptyBarcodeMessage(barcode);
                     return;
-                } else if(barcode == string.Empty)
+                }
+                else if (barcode == string.Empty)
                 {
                     ThisDisplay.SetText("Scanning error: no barcode");
                 }
             }
 
-            
+
             var priceAsText = FindPrice(barcode);
 
             if (string.IsNullOrEmpty(priceAsText))
@@ -74,11 +76,32 @@ namespace TDD_POC_Course.PointOfSale
 
         private string FindPrice(string barcode)
         {
-            if(PricesByBarcode.ContainsKey(barcode))
+            return ThisCatalog.findPrice(barcode);
+        }
+    }
+
+    public class Catalog
+    {
+        private Dictionary<string, string> _pricesByBarcode;
+
+        public Catalog(Dictionary<string, string> pricesByBarcode)
+        {
+            _pricesByBarcode = pricesByBarcode;
+        }
+        public Dictionary<string, string> getPricesByBarcode()
+        {
+            return _pricesByBarcode;
+        }
+
+        public string findPrice(string barcode)
+        {
+
+            if (_pricesByBarcode.ContainsKey(barcode))
             {
-                return PricesByBarcode[barcode];
+                return _pricesByBarcode[barcode];
             }
             return null;
         }
     }
+
 }
